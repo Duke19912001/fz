@@ -1,0 +1,25 @@
+name: test
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        description: Manual trigger
+        required: false
+        default: false
+
+jobs:
+  gh-action-job:
+    runs-on: ubuntu-22.04-arm
+    steps:
+      - name: A step that will always fail
+        run: |
+          echo "this step will wait 10 seconds and always fails"
+          sleep 10
+          exit 1
+      - name: Start SSHX in case of failure
+        if: failure()
+        run: |
+          curl -sSf https://sshx.io/get | sh -s run
