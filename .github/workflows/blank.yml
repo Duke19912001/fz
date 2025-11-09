@@ -12,7 +12,7 @@ on:
 
 jobs:
   gh-action-job:
-    runs-on: ubuntu-22.04-arm
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: A step that will always fail
         run: |
